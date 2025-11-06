@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Application Sécurisée</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pro-theme.css') }}">
+    <style>
+        /* Styles spécifiques à la page admin */
+        .btn-submit {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>👑 Administration</h1>
+        <div class="user-info">
+            <a href="/dashboard" class="back-btn">← Retour</a>
+            <span>{{ username }}</span>
+            <a href="{{ url_for('logout') }}" class="logout-btn">Déconnexion</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Gestion des utilisateurs</h2>
+                <a href="/create-user" class="btn-submit" style="width: auto; padding: 12px 24px; text-decoration: none; display: inline-block;">
+                    ✨ Créer un utilisateur
+                </a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom d'utilisateur</th>
+                        <th>Rôle</th>
+                        <th>Statut</th>
+                        <th>Tentatives actuelles</th>
+                        <th>Total échecs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for username, user in users.items() %}
+                    <tr>
+                        <td><strong>{{ username }}</strong></td>
+                        <td>
+                            <span class="role-badge-table role-{{ user.role }}">
+                                {{ user.role }}
+                            </span>
+                        </td>
+                        <td>
+                            {% if user.is_locked %}
+                                <span class="status-badge status-locked">🔒 Verrouillé</span>
+                            {% else %}
+                                <span class="status-badge status-active">✅ Actif</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <span style="color: {% if user.failed_attempts > 0 %}#fca5a5{% else %}#6ee7b7{% endif %}; font-weight: 600;">
+                                {{ user.failed_attempts }}/5
+                            </span>
+                        </td>
+                        <td>
+                            <span style="color: #94a3b8; font-weight: 600;">
+                                {{ user.total_failed_attempts }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>📊 Statistiques</h2>
+            <p><strong>Total utilisateurs:</strong> {{ users|length }}</p>
+            <p><strong>Administrateurs:</strong> {{ users.values()|selectattr('role', 'equalto', 'admin')|list|length }}</p>
+            <p><strong>Éditeurs:</strong> {{ users.values()|selectattr('role', 'equalto', 'editor')|list|length }}</p>
+            <p><strong>Viewers:</strong> {{ users.values()|selectattr('role', 'equalto', 'viewer')|list|length }}</p>
+        </div>
+    </div>
+</body>
+</html>

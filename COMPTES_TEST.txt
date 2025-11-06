@@ -1,0 +1,21 @@
+COMPTES DE TEST - APPLICATION SÉCURISÉE
+========================================
+
+⚠️ ATTENTION: Le mot de passe contient un point d'exclamation (!) à la fin
+
+1. ADMINISTRATEUR
+   Username: admin
+   Password: Admin123!
+   (Notez bien le ! à la fin)
+
+2. ÉDITEUR
+   Username: editor
+   Password: Editor123!
+   (Notez bien le ! à la fin)
+
+3. LECTEUR
+   Username: viewer
+   Password: Viewer123!
+   (Notez bien le ! à la fin)
+
+RAPPEL: Tous les mots de passe se terminent par un point d'exclamation !

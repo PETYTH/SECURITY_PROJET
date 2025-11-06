@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Application Sécurisée</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .container {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            max-width: 520px;
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(99, 102, 241, 0.2);
+            overflow: visible;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.6s ease-out;
+            margin: 20px auto;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            padding: 24px 32px;
+            text-align: center;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+        
+        .form-content {
+            padding: 32px;
+        }
+        
+        .alert {
+            padding: 14px 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            animation: slideDown 0.4s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .alert-error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .alert-success {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #6ee7b7;
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-left: 4px solid #10b981;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #cbd5e1;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.6);
+            color: #ffffff;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #06b6d4;
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 6px;
+        }
+        
+        .role-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        
+        .role-option {
+            position: relative;
+        }
+        
+        .role-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .role-label {
+            display: block;
+            padding: 16px;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.4);
+        }
+        
+        .role-label:hover {
+            border-color: #06b6d4;
+            background: rgba(6, 182, 212, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .role-option input[type="radio"]:checked + .role-label {
+            border-color: #06b6d4;
+            background: rgba(6, 182, 212, 0.15);
+            box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2);
+        }
+        
+        .role-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+        
+        .role-desc {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 12px rgba(99, 102, 241, 0.4);
+        }
+        
+        .switch-link {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        .switch-link a {
+            color: #06b6d4;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .switch-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Scrollbar personnalisée */
+        .container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .container::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 10px;
+        }
+        
+        .container::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.5);
+            border-radius: 10px;
+        }
+        
+        .container::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.7);
+        }
+        
+        /* Responsive */
+        @media (max-height: 800px) {
+            .header {
+                padding: 20px 32px;
+            }
+            
+            .form-content {
+                padding: 24px 32px;
+            }
+            
+            .form-group {
+                margin-bottom: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Créer un compte</h1>
+            <p>Rejoignez notre plateforme sécurisée</p>
+        </div>
+        
+        <div class="form-content">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form method="POST" action="{{ url_for('register') }}">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required 
+                           placeholder="Choisissez un nom d'utilisateur" autocomplete="username">
+                    <div class="help-text">3-20 caractères alphanumériques</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="votre@email.com" autocomplete="email">
+                    <div class="help-text">Nous ne partagerons jamais votre email</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Créez un mot de passe sécurisé" autocomplete="new-password">
+                    <div class="help-text">Min 8 caractères avec majuscule, minuscule, chiffre et caractère spécial</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Type de compte</label>
+                    <div class="role-selector">
+                        <div class="role-option">
+                            <input type="radio" id="viewer" name="role" value="viewer" checked>
+                            <label for="viewer" class="role-label">
+                                <div class="role-title">Viewer</div>
+                                <div class="role-desc">Lecture seule</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="editor" name="role" value="editor">
+                            <label for="editor" class="role-label">
+                                <div class="role-title">Editor</div>
+                                <div class="role-desc">Lecture et écriture</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Créer mon compte</button>
+            </form>
+            
+            <div class="switch-link">
+                Vous avez déjà un compte ? <a href="{{ url_for('login') }}">Se connecter</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

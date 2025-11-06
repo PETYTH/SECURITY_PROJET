@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un utilisateur - Application Sécurisée</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pro-theme.css') }}">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+        
+        .role-description {
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 8px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>✨ Créer un utilisateur</h1>
+        <div class="user-info">
+            <a href="/admin" class="back-btn">← Retour</a>
+            <span>{{ username }}</span>
+            <a href="{{ url_for('logout') }}" class="logout-btn">Déconnexion</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card form-container">
+            <h2>Nouvel utilisateur</h2>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form method="POST" action="{{ url_for('create_user_page') }}">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur *</label>
+                    <input type="text" id="username" name="username" required 
+                           placeholder="3-20 caractères alphanumériques">
+                    <div class="help-text">Lettres, chiffres et underscore uniquement</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe *</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Minimum 8 caractères">
+                    <div class="help-text">Min 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre, 1 caractère spécial</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="utilisateur@exemple.com">
+                    <div class="help-text">Format email valide requis</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="role">Rôle *</label>
+                    <select id="role" name="role" required onchange="updateRoleDescription()">
+                        <option value="viewer">Viewer (Lecteur)</option>
+                        <option value="editor">Editor (Éditeur)</option>
+                        <option value="admin">Admin (Administrateur)</option>
+                    </select>
+                    
+                    <div class="role-description" id="role-description">
+                        <strong>Viewer:</strong> Peut uniquement consulter les informations (lecture seule)
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit">Créer l'utilisateur</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function updateRoleDescription() {
+            const role = document.getElementById('role').value;
+            const description = document.getElementById('role-description');
+            
+            const descriptions = {
+                'viewer': '<strong>Viewer:</strong> Peut uniquement consulter les informations (lecture seule)',
+                'editor': '<strong>Editor:</strong> Peut consulter et modifier les informations',
+                'admin': '<strong>Admin:</strong> Accès complet - peut tout faire (lecture, écriture, suppression, gestion)'
+            };
+            
+            description.innerHTML = descriptions[role];
+        }
+    </script>
+</body>
+</html>

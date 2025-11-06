@@ -1,0 +1,93 @@
+{"timestamp": "2025-11-05T14:03:11.004799", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T14:03:11.005085", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "VlXWmVBCFg..."}}
+{"timestamp": "2025-11-05T14:03:41.986351", "event_type": "SESSION_LOGOUT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "VlXWmVBCFg..."}}
+{"timestamp": "2025-11-05T14:27:12.401348", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T14:27:12.405336", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "5SVxQDGVEp..."}}
+{"timestamp": "2025-11-05T14:27:12.504843", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T14:27:33.918431", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T14:28:45.963676", "event_type": "LOGIN_ATTEMPT", "user": "editor", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T14:28:45.963927", "event_type": "SESSION_CREATED", "user": "editor", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "lVJtgzRdQH..."}}
+{"timestamp": "2025-11-05T14:28:45.969903", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "editor", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T14:29:14.391162", "event_type": "LOGIN_ATTEMPT", "user": "editor", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T14:29:14.391310", "event_type": "SESSION_CREATED", "user": "editor", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "tCmV7om4Hs..."}}
+{"timestamp": "2025-11-05T14:29:14.401908", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "editor", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T14:30:41.126170", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T14:30:41.127623", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "xtfuEl11o5..."}}
+{"timestamp": "2025-11-05T14:30:41.175804", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T14:49:55.061933", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T14:49:55.062911", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "Zw1ekk5_Dn..."}}
+{"timestamp": "2025-11-05T14:49:55.095681", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T15:02:34.486446", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T15:03:19.112575", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:03:19.113376", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "Y6hRoB5mC5..."}}
+{"timestamp": "2025-11-05T15:03:19.123345", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T15:05:04.969172", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:05:04.969334", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "BE_yOFzn7C..."}}
+{"timestamp": "2025-11-05T15:05:04.974984", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T15:07:35.850279", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:07:35.850504", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "uPLu1qcMlm..."}}
+{"timestamp": "2025-11-05T15:07:35.861564", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T15:08:22.799512", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:08:22.800839", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "kPIhuf_-hx..."}}
+{"timestamp": "2025-11-05T15:08:22.884267", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T15:09:46.857712", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:09:46.857893", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "3tTaeqmNzd..."}}
+{"timestamp": "2025-11-05T15:09:46.862766", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T15:10:37.243918", "event_type": "VALIDATION_FAILURE", "user": "anonymous", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"field": "username", "value": "editor ", "reason": "Le nom d'utilisateur doit contenir 3-20 caractères alphanumériques"}}
+{"timestamp": "2025-11-05T15:12:23.049656", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:12:23.049827", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "J1WNr6dgpE..."}}
+{"timestamp": "2025-11-05T15:12:23.059238", "event_type": "SESSION_HIJACKING_ATTEMPT", "user": "admin", "ip_address": "unknown", "severity": "CRITICAL", "details": {"original_ip": "127.0.0.1", "attempted_ip": "unknown"}}
+{"timestamp": "2025-11-05T15:25:04.940005", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:25:04.940907", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "_S4zMr8ES7..."}}
+{"timestamp": "2025-11-05T15:27:26.055295", "event_type": "SESSION_LOGOUT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "_S4zMr8ES7..."}}
+{"timestamp": "2025-11-05T15:27:51.709759", "event_type": "PERMISSION_CHANGE", "user": "system", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"target_user": "petythprince", "new_role": "viewer"}}
+{"timestamp": "2025-11-05T15:28:29.779445", "event_type": "LOGIN_ATTEMPT", "user": "petythprince", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T15:30:30.798386", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:30:30.799244", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "J0jbpxxZef..."}}
+{"timestamp": "2025-11-05T15:35:24.658986", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:35:24.660125", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "dhHJ3QH8k5..."}}
+{"timestamp": "2025-11-05T15:52:34.986618", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:52:34.986944", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "TrbHjhKmXR..."}}
+{"timestamp": "2025-11-05T15:53:17.188281", "event_type": "SESSION_LOGOUT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "TrbHjhKmXR..."}}
+{"timestamp": "2025-11-05T15:53:25.606312", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T15:53:33.660568", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T15:53:40.176378", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T15:54:00.471870", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T15:54:00.472015", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "RukzyYeQd1..."}}
+{"timestamp": "2025-11-05T16:00:13.196480", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:00:13.676016", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:00:14.194685", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:01:44.090980", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:02:00.096247", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T16:02:00.096472", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "8h9Yq9A3Y4..."}}
+{"timestamp": "2025-11-05T16:02:19.849725", "event_type": "SESSION_LOGOUT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "8h9Yq9A3Y4..."}}
+{"timestamp": "2025-11-05T16:06:31.170987", "event_type": "PERMISSION_CHANGE", "user": "system", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"target_user": "lolo", "new_role": "viewer"}}
+{"timestamp": "2025-11-05T16:06:37.266638", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T16:06:37.266881", "event_type": "SESSION_CREATED", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "yWji2tvgMQ..."}}
+{"timestamp": "2025-11-05T16:07:11.012756", "event_type": "SESSION_LOGOUT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "yWji2tvgMQ..."}}
+{"timestamp": "2025-11-05T16:07:22.626794", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T16:07:22.626953", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "HSuClSAHBq..."}}
+{"timestamp": "2025-11-05T16:10:44.220003", "event_type": "SESSION_LOGOUT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "HSuClSAHBq..."}}
+{"timestamp": "2025-11-05T16:10:48.353357", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:10:48.873718", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:10:51.523675", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T16:10:51.523822", "event_type": "SESSION_CREATED", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "KRvQIhIhLF..."}}
+{"timestamp": "2025-11-05T16:10:55.398767", "event_type": "SESSION_LOGOUT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "KRvQIhIhLF..."}}
+{"timestamp": "2025-11-05T16:10:59.190445", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:11:02.294582", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:11:06.350056", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:11:08.843642", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T16:11:08.843798", "event_type": "SESSION_CREATED", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "pcX3Oq_8ti..."}}
+{"timestamp": "2025-11-05T16:11:10.004381", "event_type": "SESSION_LOGOUT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "pcX3Oq_8ti..."}}
+{"timestamp": "2025-11-05T16:11:21.273948", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T16:11:21.274103", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "iz10REtwLC..."}}
+{"timestamp": "2025-11-05T16:50:06.794069", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:50:18.840190", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:50:59.685606", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:51:01.138689", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:51:03.646460", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:51:06.393457", "event_type": "LOGIN_ATTEMPT", "user": "lolo", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"success": false}}
+{"timestamp": "2025-11-05T16:51:34.343893", "event_type": "VALIDATION_FAILURE", "user": "anonymous", "ip_address": "127.0.0.1", "severity": "WARNING", "details": {"field": "username", "value": "lolo@gmail.com", "reason": "Le nom d'utilisateur doit contenir 3-20 caractères alphanumériques"}}
+{"timestamp": "2025-11-05T16:51:56.342865", "event_type": "LOGIN_ATTEMPT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"success": true}}
+{"timestamp": "2025-11-05T16:51:56.343015", "event_type": "SESSION_CREATED", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "UdoWVIT4SL..."}}
+{"timestamp": "2025-11-05T16:52:10.407569", "event_type": "SESSION_LOGOUT", "user": "admin", "ip_address": "127.0.0.1", "severity": "INFO", "details": {"session_id": "UdoWVIT4SL..."}}

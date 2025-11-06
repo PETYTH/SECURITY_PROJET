@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur - Application Sécurisée</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pro-theme.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>📝 Éditeur</h1>
+        <div>
+            <a href="/dashboard" class="back-btn">← Retour</a>
+            <a href="{{ url_for('logout') }}" class="logout-btn">Déconnexion</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Page Éditeur</h2>
+            <p>Bienvenue {{ username }}, vous avez les permissions d'écriture.</p>
+        </div>
+    </div>
+</body>
+</html>

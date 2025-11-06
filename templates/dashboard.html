@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Application Sécurisée</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pro-theme.css') }}">
+    <style>
+        /* Styles spécifiques au dashboard */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .stat-card h4 {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .stat-card .value {
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>💎 Application Sécurisée</h1>
+        <div class="user-info">
+            <span>Bonjour, <strong>{{ username }}</strong></span>
+            <span class="role-badge">{{ role }}</span>
+            <a href="{{ url_for('logout') }}" class="logout-btn">Déconnexion</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <div class="card">
+            <h2>Tableau de bord</h2>
+            <p>Bienvenue sur votre tableau de bord sécurisé.</p>
+            <p><strong>Votre rôle:</strong> {{ role }}</p>
+            <p><strong>Permissions:</strong></p>
+            <ul>
+                {% if role == 'admin' %}
+                    <li>✅ Lecture (read)</li>
+                    <li>✅ Écriture (write)</li>
+                    <li>✅ Suppression (delete)</li>
+                    <li>✅ Administration (admin)</li>
+                {% elif role == 'editor' %}
+                    <li>✅ Lecture (read)</li>
+                    <li>✅ Écriture (write)</li>
+                    <li>❌ Suppression (delete)</li>
+                    <li>❌ Administration (admin)</li>
+                {% else %}
+                    <li>✅ Lecture (read)</li>
+                    <li>❌ Écriture (write)</li>
+                    <li>❌ Suppression (delete)</li>
+                    <li>❌ Administration (admin)</li>
+                {% endif %}
+            </ul>
+        </div>
+        
+        <div class="menu-grid">
+            <a href="/dashboard" class="menu-item">
+                <div class="icon">📊</div>
+                <h3>Dashboard</h3>
+                <p>Vue d'ensemble de votre compte</p>
+            </a>
+            
+            {% if role in ['admin', 'editor'] %}
+                <a href="/editor" class="menu-item">
+                    <div class="icon">✏️</div>
+                    <h3>Éditeur</h3>
+                    <p>Créer et modifier du contenu</p>
+                </a>
+            {% else %}
+                <div class="menu-item disabled">
+                    <div class="icon">✏️</div>
+                    <h3>Éditeur</h3>
+                    <p>Permission requise: write</p>
+                </div>
+            {% endif %}
+            
+            {% if role == 'admin' %}
+                <a href="/admin" class="menu-item">
+                    <div class="icon">👑</div>
+                    <h3>Administration</h3>
+                    <p>Gérer les utilisateurs et permissions</p>
+                </a>
+            {% else %}
+                <div class="menu-item disabled">
+                    <div class="icon">⚙️</div>
+                    <h3>Administration</h3>
+                    <p>Permission requise: admin</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
